@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/icon_login"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_reigister"
+        style="@style/textview_14_with_padding"
+        android:layout_gravity="end"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="注册"
+        android:textColor="@color/colorAccent" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:layout_weight="1">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_login_top"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/shape_corner_line"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/icon_qmt_tqg" />
+
+        <TextView
+            style="@style/textview_14"
+            android:padding="15dp"
+            android:text="全苗通App是一款全国苗木行业人士能够自助上传自己宣传资料的手机应用，实现自动传播，被动收入的商业平台。"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+
+        <TextView
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/tv_login"
+            style="@style/BTN_PRIMARY_COLOR"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="登录" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            >
+
+            <TextView style="@style/textview_14"
+                android:textColor="@color/black"
+                android:text="咨询电话："/>
+            <View android:layout_height="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView style="@style/textview_14"
+                android:lineSpacingMultiplier = "1.5"
+                android:textColor="@color/colorAccent"
+                android:layout_marginLeft="@dimen/horizontal_small"
+                android:text="13944875111"/>
+        </LinearLayout>
+        <TextView style="@style/textview_14"
+            android:paddingTop="0dp"
+            android:text="吉林德龙文化传媒有限公司"
+            android:layout_gravity="center"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
+</LinearLayout>

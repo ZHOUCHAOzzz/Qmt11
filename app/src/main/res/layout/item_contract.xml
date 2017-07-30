@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LHW">
+
+        <com.miracle.wecloud.ui.view.ImageTextView
+            android:id="@+id/iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:id="@+id/tv"
+            style="@style/textview_14" />
+    </LinearLayout>
+
+    <View style="@style/line_horizontal_gray4_with_margin" />
+</LinearLayout>

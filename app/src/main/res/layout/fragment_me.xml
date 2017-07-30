@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_main" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_pserson"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/icon_headpic" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:id="@+id/tv_name"
+                    style="@style/textview_14"
+                    android:layout_gravity="center"
+                    android:text="用户名"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_sc"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_sc" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="收藏" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View style="@style/line_horizontal_gray4" />
+
+                <LinearLayout
+                    android:id="@+id/ll_xxjl"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_record" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="消息记录" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View style="@style/line_horizontal_gray4" />
+                <!--足迹-->
+                <LinearLayout
+                    android:id="@+id/ll_zj"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_foot" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="足迹" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View style="@style/line_horizontal_gray4_bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_lyjb"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_jb" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="留言举报" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View style="@style/line_horizontal_gray4" />
+                <!--检查更新-->
+                <LinearLayout
+                    android:id="@+id/ll_update"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_update" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="检查更新" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View style="@style/line_horizontal_gray4" />
+                <!--检查更新-->
+                <LinearLayout
+                    android:id="@+id/ll_aboutus"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_update" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="关于我们" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/gray_bg" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:paddingBottom="11dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="11dp"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

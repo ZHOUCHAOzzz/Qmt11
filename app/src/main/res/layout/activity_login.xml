@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_login_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_register"
+            style="@style/textview_14_with_padding"
+            android:layout_gravity="end"
+            android:paddingRight="30dp"
+            android:text="立即注册"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LHW"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_tel" />
+
+        <EditText
+            android:id="@+id/et_tel"
+            style="@style/EditText"
+            android:layout_width="0dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:hint="请输入手机号"
+            android:inputType="number" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_delete_login" />
+    </LinearLayout>
+
+    <View style="@style/line_horizontal_gray4" />
+
+    <LinearLayout
+        style="@style/LHW"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_pwd" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            style="@style/EditText"
+            android:inputType="textPassword"
+            android:layout_width="0dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:hint="请输入密码" />
+
+        <ImageView
+            android:id="@+id/iv_visiable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_login_visiable" />
+    </LinearLayout>
+
+    <View style="@style/line_horizontal_gray4" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        style="@style/BTN_PRIMARY_COLOR"
+        android:layout_marginTop="20dp"
+        android:text="登录" />
+
+    <TextView
+        android:id="@+id/tv_forget"
+        style="@style/textview_14"
+        android:layout_gravity="end"
+        android:layout_marginTop="15dp"
+        android:paddingRight="25dp"
+        android:text="忘记密码？"
+        android:textColor="@color/colorAccent" />
+</LinearLayout>

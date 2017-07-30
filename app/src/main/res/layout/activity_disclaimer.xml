@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<include layout="@layout/title_sub"/>
+    <View style="@style/line_horizontal_gray4_bold"/>
+    <TextView style="@style/textview_14"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="特此声明！"/>
+    <TextView style="@style/textview_14"
+        android:text="声明单位信息"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:textSize="18sp"/>
+    <TextView style="@style/textview_14"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="5dp"
+        android:text="1.除haoCHINA注明之服务条款外，其他一切访问hoopCHINA而引致之任何意外、疏忽、合约毁坏、诽谤、版权或知识产权侵犯及所造成的损失，hoopCHINA\n1.除haoCHINA注明之服务条款外，其他一切访问hoopCHINA而引致之任何意外、疏忽、合约毁坏、诽谤、版权或知识产权侵犯及所造成的损失，hoopCHINA\n1.除haoCHINA注明之服务条款外，其他一切访问hoopCHINA而引致之任何意外、疏忽、合约毁坏、诽谤、版权或知识产权侵犯及所造成的损失，hoopCHINA"/>
+</LinearLayout>

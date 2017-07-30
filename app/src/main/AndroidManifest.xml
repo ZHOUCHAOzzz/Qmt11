@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.miracle.qmt" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        tools:replace="android:icon"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".SplashActivity" ><!--登录第一个界面-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" android:launchMode="singleTop" /><!--主界面-->
+        <activity android:name=".ui.activity.LoginActivity"/><!--登录第二个界面-->
+        <activity android:name=".ui.activity.RegisterActivity"/><!--注册-->
+        <activity android:name=".ui.activity.ForgePwdActivity"/><!--忘记密码-->
+        <activity android:name=".ui.activity.NewsDetailActivity" /><!--资讯详情-->
+        <activity android:name=".ui.activity.UpdateNameActivity" /><!--修改姓名-->
+        <activity android:name=".ui.activity.UpdateTelActivity" /><!--修改电话-->
+        <activity android:name=".ui.activity.UpdateCompanyActivity" /><!--修改公司名称-->
+        <activity android:name=".ui.activity.UpdateAddrActivity" /><!--修改地址-->
+        <activity android:name=".ui.activity.UpdateManageActivity" /><!--修改经营内容-->
+        <activity android:name=".ui.activity.UpdateBuyActivity" /><!--修改求购内容-->
+        <activity android:name=".ui.activity.CommNewsListActivity" /><!--首页资讯列表-->
+        <activity android:name=".ui.activity.DisclaimerActivity" /><!--首页免责声明-->
+    </application>
+
+</manifest>

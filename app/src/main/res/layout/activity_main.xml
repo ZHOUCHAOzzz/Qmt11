@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <View style="@style/line_horizontal_gray4" />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/bg_color"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/tab_home"
+            style="@style/TabRadioButton"
+            android:text="首页"
+            android:drawableTop="@drawable/selector_tab_home" />
+
+        <RadioButton
+            android:id="@+id/tab_contract"
+            style="@style/TabRadioButton"
+            android:text="通讯录"
+            android:drawableTop="@drawable/selector_tab_contract" />
+
+        <RadioButton
+            android:id="@+id/tab_upload"
+            style="@style/TabRadioButton"
+            android:text="上传"
+            android:singleLine="true"
+            android:drawableTop="@drawable/selector_tab_upload" />
+
+        <RadioButton
+            android:id="@+id/tab_me"
+            style="@style/TabRadioButton"
+            android:text="我的"
+            android:drawableTop="@drawable/selector_tab_me" />
+    </RadioGroup>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0b8e0b</color>
+    <color name="colorPrimaryDark">#0b8e0b</color>
+    <color name="colorAccent">#0b8e0b</color>
+
+    <color name="startPrimary">#0b8e0b</color>
+    <color name="endPrimary">#0b8e0b</color>
+
+    <color name="white">#fbfbfb</color>
+    <color name="black">#000000</color>
+    <color name="gray_1">#666666</color>
+    <color name="bg_color">#f5f5f5</color>
+    <color name="green_1">#007733</color>
+    <color name="green_2">#55bb33</color>
+    <color name="green_3">#a3e799</color>
+    <color name="gray_2">#999999</color>
+    <color name="gray_3">#cccccc</color>
+    <color name="gray_4">#dddddd</color>
+    <color name="gray_5">#fbfbfb</color>
+    <color name="gray_bg">#f5f5f5</color>
+    <color name="orange">#dd6600</color>
+    <color name="red">#ff0000</color>
+    <color name="transpant">#00000000</color>
+    <color name="grey_6">#dddfea</color>
+    <color name="dark_red">#782e09</color>
+    <color name="bg_gray">#f5f5f5</color>
+
+    <color name="text_green">#007b35</color>
+    <color name="text_yellow">#ff9900</color>
+    <color name="text_red_1">#cd0000</color>
+    <color name="text_gray_dark">#666666</color>
+    <color name="text_gray_light">#999999</color>
+    <color name="text_pink_light">#e9caca</color>
+    <color name="text_blue">#3761b9</color>
+
+    <color name="praise_item_default">#333333</color>
+    <color name="praise_item_selector_default">#cccccc</color>
+    <color name="praise_item">#8290AF</color>
+</resources>
