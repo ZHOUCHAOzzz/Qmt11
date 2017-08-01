@@ -247,6 +247,10 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
 
     }
 
+    public void onUpLoadSucc(String imgs){
+
+    }
+
     @Override
     public void onComplete() {
         if (mSweetLoadingDialog != null) {

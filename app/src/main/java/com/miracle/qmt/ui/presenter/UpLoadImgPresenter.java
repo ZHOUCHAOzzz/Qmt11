@@ -30,7 +30,7 @@ public class UpLoadImgPresenter<O extends BaseView> extends BasePresenter<O>{
 
         for (int i = 0; i < imgList.size(); i++) {
             File file = new File(imgList.get(i));
-            imgs.put("pig_pic[]\";filename=\""+file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
+            imgs.put("img\";filename=\""+file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
         }
         mSubscription = ApiFactory.getXynSingleton().tutu(imgs)
                 .observeOn(AndroidSchedulers.mainThread())

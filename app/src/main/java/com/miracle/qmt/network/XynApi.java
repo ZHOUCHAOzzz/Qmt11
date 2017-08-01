@@ -6,7 +6,9 @@ package com.miracle.qmt.network;
 import com.miracle.qmt.ui.model.Carousel;
 import com.miracle.qmt.ui.model.ContractItem;
 import com.miracle.qmt.ui.model.HomeCate;
+import com.miracle.qmt.ui.model.HomeNewsItem;
 import com.miracle.qmt.ui.model.LoginSuccModel;
+import com.miracle.qmt.ui.model.MessageItem;
 import com.miracle.qmt.ui.model.NewsItem;
 import com.miracle.qmt.util.UserManager;
 
@@ -17,6 +19,7 @@ import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PartMap;
 import rx.Observable;
@@ -104,12 +107,23 @@ public interface XynApi {
             @Field("type") String type,
             @Field("page") int page
     );
-
     //11.上传图片
-    @FormUrlEncoded
+    @Multipart
     @POST("home/index/tutu")
     public Observable<MyResult<Object>> tutu(
             @PartMap Map<String, RequestBody> params
+    );
+    //12.首页
+    @FormUrlEncoded
+    @POST("home/index/news")
+    public Observable<MyResult<ArrayList<HomeNewsItem>>> news(
+            @Field("type_id") String type
+    );
+    //13消息
+    @FormUrlEncoded
+    @POST("home/index/messages")
+    public Observable<MyResult<ArrayList<MessageItem>>> messages(
+            @Field("type_id") String type
     );
 
 }

@@ -17,6 +17,7 @@ import com.miracle.qmt.network.MyResult;
 import com.miracle.qmt.ui.contract.HomeContract;
 import com.miracle.qmt.ui.model.Carousel;
 import com.miracle.qmt.ui.model.HomeCate;
+import com.miracle.qmt.ui.model.HomeNewsItem;
 import com.miracle.qmt.ui.presenter.HomePresenter;
 import com.miracle.qmt.ui.view.viewHolder.HomeInfoVH;
 
@@ -101,6 +102,11 @@ public class HomeFragmentBk extends BaseListFragment<HomePresenter, HomeCate, Ar
     @Override
     public void onBannerSucc(ArrayList<Carousel> response) {
         setBanner(response);
+    }
+
+    @Override
+    public void onNewsSucc(ArrayList<HomeNewsItem> response) {
+
     }
 
     //轮播数据填充

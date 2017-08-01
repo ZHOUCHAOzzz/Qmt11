@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LHW"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:textColor="@color/black"
+                    style="@style/textview_14"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:text="Title"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    style="@style/textview_14"
+                    android:textSize="12sp"
+                    android:text="date"/>
+            </LinearLayout>
+            <TextView style="@style/textview_14"
+                android:text="消息消息消息消息"
+                android:textSize="13sp"
+                android:id="@+id/tv_content"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_right"/>
+    </LinearLayout>
+    <View style="@style/line_horizontal_gray4_with_margin"/>
+</LinearLayout>

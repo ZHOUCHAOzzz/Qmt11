@@ -192,6 +192,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         }
     }
 
+    public void onUpLoadSucc(String imgs){
+
+    }
     @Override
     public void onStateSuccess() {
         hideNetErr();

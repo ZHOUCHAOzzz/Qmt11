@@ -26,8 +26,12 @@ public class CommNewsListActivity extends BaseListActivity<BasePresenter, NewsIt
     @Override
     public void initView() {
         super.initView();
-        mType = getIntent().getStringExtra(ConstantKey.STRING_ITEM);
-        mTvTitle.setText(getIntent().getStringExtra(ConstantKey.STRING_ITEM2));
+
+        if (mTvTitle != null) {
+            mType = getIntent().getStringExtra(ConstantKey.STRING_ITEM);
+            mTvTitle.setText(getIntent().getStringExtra(ConstantKey.STRING_ITEM2));
+        }
+
         mIVNoData.setImageResource(R.drawable.icon_no_news);
     }
 
@@ -43,7 +47,7 @@ public class CommNewsListActivity extends BaseListActivity<BasePresenter, NewsIt
 
     @Override
     public Observable<MyResult<ArrayList<NewsItem>>> getObservble() {
-        return ApiFactory.getXynSingleton().Informationlist(mType,mPage);
+        return ApiFactory.getXynSingleton().Informationlist(mType, mPage);
     }
 
     @Override
@@ -59,8 +63,8 @@ public class CommNewsListActivity extends BaseListActivity<BasePresenter, NewsIt
     @Override
     public void onItemClickEvent(View view, NewsItem item, int position) {
         super.onItemClickEvent(view, item, position);
-        Intent intent = new Intent(mContext,NewsDetailActivity.class);
-        intent.putExtra(ConstantKey.STRING_ITEM,item.getDetail_id());
+        Intent intent = new Intent(mContext, NewsDetailActivity.class);
+        intent.putExtra(ConstantKey.STRING_ITEM, item.getDetail_id());
         showActivity(intent);
     }
 }

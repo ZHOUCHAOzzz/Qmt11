@@ -6,7 +6,7 @@
     android:background="@color/bg_color"
     android:orientation="vertical">
 
-    <include layout="@layout/title_main" />
+    <include layout="@layout/title_home" />
 
     <com.jude.rollviewpager.RollPagerView
         android:id="@+id/roll_view_pager"
@@ -20,26 +20,6 @@
         android:layout_height="35dp"
         android:background="@color/gray_4">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_ring" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/horizontal_small"
-                android:gravity="center_vertical"
-                android:text="你有一条新消息" />
-        </LinearLayout>
 
     </ViewFlipper>
 

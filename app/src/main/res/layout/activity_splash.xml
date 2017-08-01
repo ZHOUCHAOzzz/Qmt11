@@ -89,7 +89,7 @@
         </LinearLayout>
         <TextView style="@style/textview_14"
             android:paddingTop="0dp"
-            android:text="吉林德龙文化传媒有限公司"
+            android:text="吉林德隆文化传媒有限公司"
             android:layout_gravity="center"
             android:textColor="@color/black"/>
     </LinearLayout>

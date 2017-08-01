@@ -15,5 +15,7 @@ public interface BaseView {
     //请求失败或其它
     public void showMsg(String msg);
 
+    public void onUpLoadSucc(String imgs);
+
 //    public void onStatusSucc(Boolean hasOrderUnPay);
 }

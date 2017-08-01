@@ -1,5 +1,8 @@
 package com.miracle.qmt.ui.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,12 +14,24 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.miracle.qmt.MainActivity;
 import com.miracle.qmt.R;
 import com.miracle.qmt.base.BaseFragment;
+import com.miracle.qmt.ui.activity.CommNewsListActivity;
+import com.miracle.qmt.ui.activity.DisclaimerActivity;
+import com.miracle.qmt.ui.activity.MessageListActivity;
+import com.miracle.qmt.ui.activity.ReportActivity;
 import com.miracle.qmt.ui.contract.MeContract;
 import com.miracle.qmt.ui.presenter.MePresenter;
+import com.miracle.qmt.util.ConstantKey;
 import com.miracle.qmt.util.PreferencesUtils;
+import com.miracle.qmt.util.T;
 import com.miracle.qmt.util.UserManager;
+import com.pgyersdk.update.PgyUpdateManager;
+import com.pgyersdk.update.UpdateManagerListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -25,6 +40,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.finalteam.galleryfinal.GalleryFinal;
 import cn.finalteam.galleryfinal.model.PhotoInfo;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -68,6 +84,13 @@ public class MeFragment extends BaseFragment<MePresenter> implements MeContract.
     }
 
     @Override
+    public void initData() {
+        super.initData();
+//        PgyUpdateManager.setIsForced(true); //设置是否强制更新。true为强制更新；false为不强制更新（默认值）。
+//        PgyUpdateManager.register(getActivity(), getString(R.string.provider_file));
+    }
+
+    @Override
     public int getLayoutId() {
         return R.layout.fragment_me;
     }
@@ -75,6 +98,53 @@ public class MeFragment extends BaseFragment<MePresenter> implements MeContract.
     @Override
     public void onNetErrorClick() {
 
+    }
+
+    //收藏
+    @OnClick(R.id.iv_me_sc)
+    public void mScClick() {
+        Intent intent = new Intent(mContext, CommNewsListActivity.class);
+        intent.putExtra(ConstantKey.STRING_ITEM, "sc");
+        intent.putExtra(ConstantKey.STRING_ITEM2, "我的收藏");
+        showActivity(intent);
+    }
+
+    //消息记录
+    @OnClick(R.id.iv_me_xxjl)
+    public void mXXClick() {
+        Intent intent = new Intent(mContext, MessageListActivity.class);
+        showActivity(intent);
+    }
+
+    //消息记录
+    @OnClick(R.id.iv_me_zj)
+    public void mZJClick() {
+        Intent intent = new Intent(mContext, CommNewsListActivity.class);
+        intent.putExtra(ConstantKey.STRING_ITEM, "zj");
+        intent.putExtra(ConstantKey.STRING_ITEM2, "足迹");
+        showActivity(intent);
+    }
+
+    //举报
+    @OnClick(R.id.iv_me_jb)
+    public void mJBClick() {
+        Intent intent = new Intent(mContext, ReportActivity.class);
+        showActivity(intent);
+    }
+
+    //关于我们
+    @OnClick(R.id.iv_me_aboutus)
+    public void aboutUsClick() {
+        Intent infoItent = new Intent(mContext, DisclaimerActivity.class);
+        infoItent.putExtra(ConstantKey.STRING_ITEM, "关于我们");
+        infoItent.putExtra(ConstantKey.STRING_ITEM2, R.string.aboutus);
+        showActivity(infoItent);
+    }
+
+    //关于我们
+    @OnClick(R.id.iv_me_gx)
+    public void updateClick(){
+        checkUpdate();
     }
 
     @OnClick(R.id.iv_pserson)
@@ -179,17 +249,66 @@ public class MeFragment extends BaseFragment<MePresenter> implements MeContract.
 
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
+    private void checkUpdate() {
+        PgyUpdateManager.register(getActivity(),
+                getString(R.string.provider_file),
+                new UpdateManagerListener() {
+                    @Override
+                    public void onUpdateAvailable(final String result) {
+
+                        final SweetAlertDialog dialog = new SweetAlertDialog(mContext,SweetAlertDialog.SUCCESS_TYPE);
+                        dialog.setTitleText("检测到新版本");
+                        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                            @Override
+                            public void onCancel(DialogInterface dialog) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.setConfirmText("更新");
+                        dialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                dialog.dismiss();
+                                String url;
+                                JSONObject jsonData;
+                                try {
+                                    jsonData = new JSONObject(
+                                            result);
+                                    if ("0".equals(jsonData
+                                            .getString("code"))) {
+                                        JSONObject jsonObject = jsonData
+                                                .getJSONObject("data");
+                                        url = jsonObject
+                                                .getString("downloadURL");
+
+                                        startDownloadTask(
+                                                getActivity(),
+                                                url);
+
+
+                                    }
+
+                                } catch (JSONException e) {
+                                    // TODO Auto-generated
+                                    // catch block
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        dialog.show();
+
+                    }
+
+                    @Override
+                    public void onNoUpdateAvailable() {
+                        showErrorDialog("没有新版本");
+                    }
+                });
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
+    public void onDestroy() {
+        super.onDestroy();
+        PgyUpdateManager.unregister();
     }
 }

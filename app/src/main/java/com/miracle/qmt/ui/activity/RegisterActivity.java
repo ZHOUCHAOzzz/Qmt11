@@ -60,9 +60,15 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         mIvDelete.setOnClickListener(this);
         mIvVisiable.setOnClickListener(this);
         etTel.addTextChangedListener(this);
+        tvGetcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getCodeClick();
+            }
+        });
     }
 
-    @OnClick(R.id.tv_getcode)
+
     public void getCodeClick() {
         String tel = etTel.getText().toString().trim();
         //手机号不能为空
@@ -100,7 +106,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         model.tel = tel;
         model.code = code;
         model.pwd = pwd;
-        showProgressDialog("处理中");
+//        showProgressDialog("处理中");
         mPresenter.register(model);
     }
 

@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
 import com.jude.rollviewpager.RollPagerView;
@@ -17,8 +20,11 @@ import com.miracle.qmt.base.BaseWebActivity;
 import com.miracle.qmt.ui.activity.CommNewsListActivity;
 import com.miracle.qmt.ui.activity.DisclaimerActivity;
 import com.miracle.qmt.ui.activity.NewsDetailActivity;
+import com.miracle.qmt.ui.activity.SearchListActivity;
+import com.miracle.qmt.ui.activity.ShareActivity;
 import com.miracle.qmt.ui.contract.HomeContract;
 import com.miracle.qmt.ui.model.Carousel;
+import com.miracle.qmt.ui.model.HomeNewsItem;
 import com.miracle.qmt.ui.presenter.HomePresenter;
 import com.miracle.qmt.util.ConstantKey;
 
@@ -58,6 +64,16 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     TextView mTv11;
     @Bind(R.id.tv_12)
     TextView mTv12;
+    @Bind(R.id.viewflipper)
+    ViewFlipper mViewFlipper;
+    @Bind(R.id.tv_title_left)
+    TextView mTvLeft;
+    @Bind(R.id.tv_title_right)
+    TextView mTvRight;
+    @Bind(R.id.ll_city)
+    LinearLayout mLLCity;
+    @Bind(R.id.ll_search)
+    LinearLayout mLLSearch;
 
     public static HomeFragment mFragment;
     public static HomeFragment newInstance(){
@@ -68,7 +84,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @Override
     public void initView() {
         super.initView();
-        mTvTitle.setText("首页");
+        mTvTitle.setText("全苗通");
         mTv1.setOnClickListener(this);
         mTv2.setOnClickListener(this);
         mTv3.setOnClickListener(this);
@@ -81,6 +97,14 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         mTv10.setOnClickListener(this);
         mTv11.setOnClickListener(this);
         mTv12.setOnClickListener(this);
+        mViewFlipper.setInAnimation(AnimationUtils.loadAnimation(getActivity(), android.R.anim.slide_in_left));
+        mViewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getActivity(), android.R.anim.slide_out_right));
+        mLLCity.setOnClickListener(this);
+//        onNewsSucc(null);
+        mViewFlipper.setFlipInterval(5000);
+        mTvLeft.setText("城市");
+        mTvRight.setText("搜索");
+        mTvRight.setOnClickListener(this);
     }
 
     @Override
@@ -96,6 +120,26 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @Override
     public void onBannerSucc(ArrayList<Carousel> response) {
         setBanner(response);
+    }
+
+    @Override
+    public void onNewsSucc(ArrayList<HomeNewsItem> response) {
+        if(response != null && response.size()>0)
+        mViewFlipper.removeAllViews();
+//        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < response.size(); i++) {
+            View view = View.inflate(mContext,R.layout.view_home_news,null);
+            TextView tv = (TextView) view.findViewById(R.id.tv);
+            tv.setText(response.get(i).getNews_content());
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            mViewFlipper.addView(view);
+        }
+        mViewFlipper.startFlipping();
     }
 
     //轮播数据填充
@@ -212,11 +256,26 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
             case R.id.tv_9:
                 break;
             case R.id.tv_10:
+                Intent shareIntent = new Intent(mContext,ShareActivity.class);
+                showActivity(shareIntent);
                 break;
             case R.id.tv_11:
+                Intent detailItent = new Intent(mContext,DisclaimerActivity.class);
+                detailItent.putExtra(ConstantKey.STRING_ITEM,"详细说明");
+                detailItent.putExtra(ConstantKey.STRING_ITEM2,R.string.mzsm);
+                showActivity(detailItent);
                 break;
             case R.id.tv_12:
-                showActivity(new Intent(mContext,DisclaimerActivity.class));
+                Intent infoItent = new Intent(mContext,DisclaimerActivity.class);
+                infoItent.putExtra(ConstantKey.STRING_ITEM,"免责声明");
+                infoItent.putExtra(ConstantKey.STRING_ITEM2,R.string.mzsm);
+                showActivity(infoItent);
+                break;
+            case R.id.ll_city:
+//                showActivity();
+                break;
+            case R.id.tv_title_right:
+                showActivity(new Intent(mContext,SearchListActivity.class));
                 break;
         }
     }
