@@ -7,18 +7,51 @@
     <include layout="@layout/view_search" />
 
     <View style="@style/line_horizontal_gray4" />
-
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bg_color">
+        android:layout_height="match_parent">
+        <!--没有数据，可替换图片-->
+        <ImageView
+            android:id="@+id/iv_no_data"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:src="@drawable/icon_no_contract"/>
 
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
-            android:id="@+id/xrcv"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_color"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null" >
+            </ListView>
 
-        <include layout="@layout/loading_layout" />
-    </FrameLayout>
+            <TextView
+                android:id="@+id/dialog"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:layout_gravity="center"
+                android:background="@drawable/show_head_toast_bg"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="#ffffffff"
+                android:textSize="30.0dip"
+                android:visibility="invisible" />
+
+            <com.miracle.qmt.contact.SideBar
+                android:id="@+id/sidebar"
+                android:layout_width="20dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
 </LinearLayout>

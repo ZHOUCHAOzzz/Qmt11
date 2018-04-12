@@ -16,10 +16,11 @@ import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.miracle.qmt.R;
 import com.miracle.qmt.base.BaseFragment;
-import com.miracle.qmt.base.BaseWebActivity;
 import com.miracle.qmt.ui.activity.CommNewsListActivity;
+import com.miracle.qmt.ui.activity.CommissionActivity;
+import com.miracle.qmt.ui.activity.ContractDetailsActivity;
+import com.miracle.qmt.ui.activity.DetailsActivity;
 import com.miracle.qmt.ui.activity.DisclaimerActivity;
-import com.miracle.qmt.ui.activity.NewsDetailActivity;
 import com.miracle.qmt.ui.activity.SearchListActivity;
 import com.miracle.qmt.ui.activity.ShareActivity;
 import com.miracle.qmt.ui.contract.HomeContract;
@@ -27,6 +28,7 @@ import com.miracle.qmt.ui.model.Carousel;
 import com.miracle.qmt.ui.model.HomeNewsItem;
 import com.miracle.qmt.ui.presenter.HomePresenter;
 import com.miracle.qmt.util.ConstantKey;
+import com.miracle.qmt.util.location.Activity01;
 
 import java.util.ArrayList;
 
@@ -104,7 +106,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         mViewFlipper.setFlipInterval(5000);
         mTvLeft.setText("城市");
         mTvRight.setText("搜索");
+      //  mTvRight.setVisibility(View.INVISIBLE);
         mTvRight.setOnClickListener(this);
+        mLLCity.setOnClickListener(this);
     }
 
     @Override
@@ -151,6 +155,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         //设置适配器
         mRollViewPager.setAdapter(new TestNormalAdapter(list));
         mRollViewPager.setHintView(new ColorPointHintView(mContext, Color.WHITE, Color.GRAY));
+
     }
 
     private class TestNormalAdapter extends StaticPagerAdapter {
@@ -170,9 +175,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Intent intent = new Intent(mContext, BaseWebActivity.class);
-//                    intent.putExtra(BaseWebActivity.URL,list.get(position).getCarousel_url());
-//                    showActivity(intent);
+                    Intent intent = new Intent(mContext, ContractDetailsActivity.class);
+                    intent.putExtra("userid",list.get(position).getUser_id());
+                    showActivity(intent);
                 }
             });
             return view;
@@ -254,25 +259,28 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
         switch (view.getId()){
             case R.id.tv_9:
+                Intent intent9=new Intent(mContext, CommissionActivity.class);
+                showActivity(intent9);
                 break;
             case R.id.tv_10:
                 Intent shareIntent = new Intent(mContext,ShareActivity.class);
                 showActivity(shareIntent);
                 break;
             case R.id.tv_11:
-                Intent detailItent = new Intent(mContext,DisclaimerActivity.class);
+                Intent detailItent = new Intent(mContext,DetailsActivity.class);
                 detailItent.putExtra(ConstantKey.STRING_ITEM,"详细说明");
-                detailItent.putExtra(ConstantKey.STRING_ITEM2,R.string.mzsm);
+                detailItent.putExtra(ConstantKey.STRING_ITEM2, R.string.xxsm);
                 showActivity(detailItent);
                 break;
             case R.id.tv_12:
                 Intent infoItent = new Intent(mContext,DisclaimerActivity.class);
                 infoItent.putExtra(ConstantKey.STRING_ITEM,"免责声明");
-                infoItent.putExtra(ConstantKey.STRING_ITEM2,R.string.mzsm);
+                infoItent.putExtra(ConstantKey.STRING_ITEM2,getActivity().getString(R.string.mzsm));
                 showActivity(infoItent);
                 break;
             case R.id.ll_city:
-//                showActivity();
+                Intent locationIntent = new Intent(mContext, Activity01.class);
+                showActivity(locationIntent);
                 break;
             case R.id.tv_title_right:
                 showActivity(new Intent(mContext,SearchListActivity.class));

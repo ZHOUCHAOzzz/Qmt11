@@ -1,14 +1,13 @@
 package com.miracle.qmt;
 
 import android.content.Intent;
-import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.miracle.qmt.base.BaseActivity;
 import com.miracle.qmt.ui.activity.LoginActivity;
 import com.miracle.qmt.ui.activity.RegisterActivity;
 import com.miracle.qmt.ui.contract.LoginContract;
-import com.miracle.qmt.ui.model.LoginSuccModel;
+import com.miracle.qmt.ui.model.LoginBean;
 import com.miracle.qmt.ui.presenter.LoginPresenter;
 import com.miracle.qmt.util.PreferencesUtils;
 
@@ -42,9 +41,10 @@ public class SplashActivity extends BaseActivity<LoginPresenter> implements Logi
         String tel = PreferencesUtils.getPreferences(mContext,PreferencesUtils.USER_TEL);
         String pwd = PreferencesUtils.getPreferences(mContext,PreferencesUtils.USER_PWD);
 
-        if(!TextUtils.isEmpty(tel) && !TextUtils.isEmpty(pwd)){//若存在账户和密码，那么直接登录
-            showProgressDialog("登录中");
-            mPresenter.login(tel,pwd);
+        if(AppController.getInstance().getUser()!=null){//若存在账户和密码，那么直接登录
+            /*showProgressDialog("登录中");
+            mPresenter.login(tel,pwd);*/
+            showActivity(new Intent(mContext, MainActivity.class));
         }else{
             showActivity(new Intent(mContext, LoginActivity.class));
             finish();
@@ -53,7 +53,7 @@ public class SplashActivity extends BaseActivity<LoginPresenter> implements Logi
     }
 
     @Override
-    public void loginSucc(LoginSuccModel model) {
+    public void loginSucc(LoginBean model) {
         showActivity(new Intent(mContext, MainActivity.class));
         finish();
     }

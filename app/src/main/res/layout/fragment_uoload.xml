@@ -29,7 +29,7 @@
                     android:layout_weight="1"
                     android:text="头像" />
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_head"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -44,7 +44,8 @@
 
             <View style="@style/line_horizontal_gray4_with_margin" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_name">
 
                 <TextView
                     style="@style/textview_14"
@@ -54,7 +55,8 @@
                     android:text="姓名" />
 
                 <TextView
-                    android:id="@+id/tv_name"
+                    android:id="@+id/tv_nike_name"
+                    android:text="hhh"
                     style="@style/textview_14"
                     />
 
@@ -71,7 +73,8 @@
                 android:layout_height="10dp"
                 android:background="@color/bg_color" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_tel">
 
                 <TextView
                     style="@style/textview_14"
@@ -95,7 +98,8 @@
 
             <View style="@style/line_horizontal_gray4_with_margin" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_company">
 
                 <TextView
                     style="@style/textview_14"
@@ -118,7 +122,8 @@
 
             <View style="@style/line_horizontal_gray4_with_margin" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_addr">
 
                 <TextView
                     style="@style/textview_14"
@@ -144,7 +149,9 @@
                 android:layout_height="10dp"
                 android:background="@color/bg_color" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_jynr"
+                >
 
                 <TextView
                     style="@style/textview_14"
@@ -163,7 +170,9 @@
 
             <View style="@style/line_horizontal_gray4_with_margin" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_qg"
+                >
 
                 <TextView
                     style="@style/textview_14"
@@ -185,7 +194,8 @@
                 android:layout_height="10dp"
                 android:background="@color/bg_color" />
 
-            <LinearLayout style="@style/LHW_X">
+            <LinearLayout style="@style/LHW_X"
+                android:id="@+id/ll_sctp">
 
                 <TextView
                     style="@style/textview_14"

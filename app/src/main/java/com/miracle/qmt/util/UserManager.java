@@ -9,11 +9,28 @@ import java.util.ArrayList;
  */
 public class UserManager {
     public static void saveUserInfo(Context context,User user) {
+
+       /* LoginBean.UserBean userbean=AppController.getInstance().getUser();
+        userbean.setUser_id(AppController.getInstance().getUser().getUser_id());
+        userbean.setAddress(user.getAddress());
+        userbean.setBuy(user.getBuy());
+        userbean.setCompany_name(user.getCompany_name());
+        userbean.setHead_pic(user.getHead_pic());
+        userbean.setManagement(user.getManagement());
+        userbean.setNick_name(user.getNick_name());
+        userbean.setPhone(user.getPhone());
+        userbean.setPic(user.getPic());
+
+        AppController.getInstance().putUser(userbean,userbean.getUser_id()+"");*/
         PreferencesUtils.setPreferences(context,PreferencesUtils.USER_NAME,user.getName());
         PreferencesUtils.setPreferences(context,PreferencesUtils.USER_TEL,user.getPhone());
         PreferencesUtils.setPreferences(context,PreferencesUtils.USER_HEAD_PIC,user.getHead_pic());
         PreferencesUtils.setPreferences(context,PreferencesUtils.USER_ADDRESS,user.getAddress());
         PreferencesUtils.setPreferences(context,PreferencesUtils.USER_COMPANY_NAME,user.getCompany_name());
+        PreferencesUtils.setPreferences(context,PreferencesUtils.USER_BUY,user.getBuy());
+        PreferencesUtils.setPreferences(context,PreferencesUtils.USER_MANAGEMENT,user.getManagement());
+        PreferencesUtils.setPreferences(context,PreferencesUtils.USER_PIC,user.getPics());
+
     }
 
     public static void saveLoginSuccInfo(Context context, String userID, String pwd, String tel){
@@ -22,7 +39,7 @@ public class UserManager {
         PreferencesUtils.setPreferences(context,PreferencesUtils.USER_TEL,tel);
     }
 
-    public class User {
+    public  class User {
         private String user_id;//用户id
         private String nick_name;//	昵称
         private String address;//	地址

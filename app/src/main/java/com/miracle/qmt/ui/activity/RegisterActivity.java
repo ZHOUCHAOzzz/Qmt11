@@ -1,7 +1,8 @@
 package com.miracle.qmt.ui.activity;
 
 
-import android.os.Bundle;
+import android.content.Intent;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -19,7 +20,6 @@ import com.miracle.qmt.ui.presenter.RegisterPresenter;
 import com.miracle.qmt.util.T;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -76,8 +76,33 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
             T.showShort(mContext, "手机号不能为空");
             return;
         }
+
         showProgressDialog("处理中");
         mPresenter.getCode(tel);
+         timego();
+    }
+    public void timego() {
+        CountDownTimer timer = new CountDownTimer(60000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tvGetcode.setEnabled(false);
+                tvGetcode.setText((millisUntilFinished / 1000) + "秒");
+            }
+
+            @Override
+            public void onFinish() {
+                // btnGetcode.setBackgroundResource(R.drawable.bg_button_style_authcodewhite);
+                //tv_getcode.setTextColor(getResources().getColor(R.color.toolbarbg));
+                tvGetcode.setEnabled(true);
+                tvGetcode.setText("获取验证码");
+            }
+        };
+        timer.start();
+    }
+
+    @OnClick(R.id.tv_login)
+    public void mLoginActivity(){
+        showActivity(new Intent(mContext,LoginActivity.class));
     }
 
     //注册
@@ -113,7 +138,9 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     @Override
     public void registerSucc() {
         T.showShort(mContext, "注册成功");
-        finish();
+        startActivity(new Intent(mContext,LoginActivity.class));
+
+      //  finish();
     }
 
     @Override

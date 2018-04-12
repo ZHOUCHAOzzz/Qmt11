@@ -1,6 +1,6 @@
 package com.miracle.qmt.ui.activity;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -15,10 +15,8 @@ import com.miracle.qmt.ui.contract.UpdateInfoContract;
 import com.miracle.qmt.ui.presenter.UpdateInfoPresenter;
 import com.miracle.qmt.util.PreferencesUtils;
 import com.miracle.qmt.util.T;
-import com.miracle.qmt.util.UserManager;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2017/7/30.
@@ -49,13 +47,21 @@ public class UpdateNameActivity extends BaseActivity<UpdateInfoPresenter> implem
         tvTitleRight.setText("保存");
         tvTitleRight.setClickable(true);
         etName.addTextChangedListener(this);
+
         tvTitleRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManager.User user = new UserManager().new User();
-                user.setName(etName.getText().toString().trim());
-                showProgressDialog("处理中");
-                mPresenter.updateInfo(user);
+                /*UserManager.User user = new UserManager().new  User();
+                user.setName(etName.getText().toString().trim());*/
+                PreferencesUtils.setPreferences(UpdateNameActivity.this,PreferencesUtils.USER_NAME,etName.getText().toString().trim());
+                Intent mIntent = new Intent();
+                mIntent.putExtra("name", etName.getText().toString().trim());
+                // 设置结果，并进行传送
+                setResult(101, mIntent);
+                finish();
+
+                // showProgressDialog("处理中");
+              //  mPresenter.updateInfo(user);
             }
         });
     }
@@ -87,6 +93,7 @@ public class UpdateNameActivity extends BaseActivity<UpdateInfoPresenter> implem
     public void updateSucc() {
         T.showShort(mContext,"修改成功");
         PreferencesUtils.setPreferences(mContext,PreferencesUtils.USER_NAME,etName.getText().toString());
+       // setResult(100);
         finish();
     }
 }

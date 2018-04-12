@@ -1,5 +1,6 @@
 package com.miracle.qmt.ui.activity;
 
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -14,7 +15,6 @@ import com.miracle.qmt.ui.contract.UpdateInfoContract;
 import com.miracle.qmt.ui.presenter.UpdateInfoPresenter;
 import com.miracle.qmt.util.PreferencesUtils;
 import com.miracle.qmt.util.T;
-import com.miracle.qmt.util.UserManager;
 
 import butterknife.Bind;
 
@@ -50,10 +50,16 @@ public class UpdateCompanyActivity extends BaseActivity<UpdateInfoPresenter> imp
         tvTitleRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManager.User user = new UserManager().new User();
-                user.setCompany_name(etName.getText().toString().trim());
-                showProgressDialog("加载中");
-                mPresenter.updateInfo(user);
+                PreferencesUtils.setPreferences(UpdateCompanyActivity.this,PreferencesUtils.USER_COMPANY_NAME,etName.getText().toString().trim());
+                /*UserManager.User user = new UserManager().new User();
+                user.setCompany_name(etName.getText().toString().trim());*/
+                Intent mIntent = new Intent();
+                mIntent.putExtra("company", etName.getText().toString().trim());
+                // 设置结果，并进行传送
+                setResult(103, mIntent);
+                finish();
+                //showProgressDialog("加载中");
+              //  mPresenter.updateInfo(user);
             }
         });
     }

@@ -59,6 +59,7 @@ public class T {
             View view = toast.getView();
 //            view.setBackgroundColor(context.getResources().getColor(R.color.green_1));
             view.setBackgroundResource(R.drawable.shape_primary_corner);
+            view.setPadding(10,5,10,5);
             toast.setView(view);
             // toast.setGravity(Gravity.CENTER, 0, 0);
         } else {

@@ -36,7 +36,7 @@
 
                 <TextView
                     android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:id="@+id/tv_name"
+                    android:id="@+id/tv_nikename"
                     style="@style/textview_14"
                     android:layout_gravity="center"
                     android:text="用户名"
@@ -72,6 +72,29 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/icon_right" />
                 </LinearLayout>
+                <View style="@style/line_horizontal_gray4" />
+                <LinearLayout
+                    android:id="@+id/ll_txlsc"
+                    style="@style/LHW_X">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_me_sc" />
+
+                    <TextView
+                        style="@style/textview_14"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="通讯录收藏" />
+
+                    <ImageView
+                        android:id="@+id/iv_me_txlsc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
 
                 <View style="@style/line_horizontal_gray4" />
 
@@ -102,6 +125,7 @@
                 <!--足迹-->
                 <LinearLayout
                     android:id="@+id/ll_zj"
+                    android:visibility="gone"
                     style="@style/LHW_X">
 
                     <ImageView
@@ -207,7 +231,6 @@
                 android:background="@color/gray_bg" />
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/tv_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

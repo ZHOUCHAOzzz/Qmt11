@@ -1,7 +1,6 @@
 package com.miracle.qmt.ui.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -11,19 +10,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.miracle.qmt.AppController;
 import com.miracle.qmt.MainActivity;
 import com.miracle.qmt.R;
 import com.miracle.qmt.base.BaseActivity;
 import com.miracle.qmt.ui.contract.LoginContract;
-import com.miracle.qmt.ui.contract.RegisterContract;
-import com.miracle.qmt.ui.model.LoginSuccModel;
+import com.miracle.qmt.ui.model.LoginBean;
 import com.miracle.qmt.ui.presenter.LoginPresenter;
 import com.miracle.qmt.util.PreferencesUtils;
 import com.miracle.qmt.util.T;
-import com.miracle.qmt.util.UserManager;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -45,6 +42,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public int getLayoutId() {
         return R.layout.activity_login;
+
     }
 
     @Override
@@ -55,6 +53,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void initView() {
         super.initView();
+
 
         mIvDelete.setOnClickListener(this);
         mIvVisiable.setOnClickListener(this);
@@ -87,7 +86,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             T.showShort(mContext, "密码不能为空");
             return;
         }
-        showProgressDialog("处理中");
+        showProgressDialog("登录中..");
         mPresenter.login(tel, mPwd);
     }
 
@@ -100,12 +99,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     //忘记密码
     @OnClick(R.id.tv_forget)
     public void mForgetClick() {
-        showActivity(new Intent(mContext, ForgePwdActivity.class));
+        showActivity(new Intent(mContext, RegisterActivity.class));
     }
 
     @Override
-    public void loginSucc(LoginSuccModel model) {
-        UserManager.saveLoginSuccInfo(mContext,model.getUser_id(),mPwd,model.getPhone());
+    public void loginSucc(LoginBean model) {
+        AppController.getInstance().putUser(model.getData(),model.getData().getUser_id()+"");
+     //   UserManager.saveLoginSuccInfo(mContext,model.getData().getUser_id()+"",mPwd,model.getData().getPhone());
         showActivity(new Intent(mContext, MainActivity.class));
         finish();
     }

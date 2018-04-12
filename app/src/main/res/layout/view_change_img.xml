@@ -29,6 +29,7 @@
     <View style="@style/line_horizontal_gray4_with_margin" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/tv_saveimg"
         android:layout_width="match_parent"
         android:gravity="center"

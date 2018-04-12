@@ -1,23 +1,8 @@
 package com.miracle.qmt.ui.presenter;
 
-import android.text.TextUtils;
-
-import com.miracle.qmt.network.ApiFactory;
-import com.miracle.qmt.network.MyObserver;
 import com.miracle.qmt.ui.contract.UpdateInfoContract;
 import com.miracle.qmt.util.PreferencesUtils;
 import com.miracle.qmt.util.UserManager;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import retrofit2.http.Field;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by WJQ on 2016/11/14.
@@ -63,7 +48,7 @@ public class UpdateInfoPresenter extends UpdateInfoContract.Presenter {
 //        @Part MultipartBody.Part name,
 //        @Part MultipartBody.Part head_pic,
 //        @PartMap Map<String, RequestBody> params
-        mSubscription = ApiFactory.getXynSingleton().gerengai(userId,user.getNick_name(),user.getAddress(),user.getManagement(),user.getBuy()
+       /* mSubscription = ApiFactory.getXynSingleton().gerengai(userId,user.getNick_name(),user.getAddress(),user.getManagement(),user.getBuy()
                 ,user.getCompany_name(),user.getName(),user.getPhone(),user.getHead_pic(),user.getPics())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -80,6 +65,6 @@ public class UpdateInfoPresenter extends UpdateInfoContract.Presenter {
                         mView.showMsg(info);
                     }
                 });
-        addSubscription(mSubscription);
+        addSubscription(mSubscription);*/
     }
 }

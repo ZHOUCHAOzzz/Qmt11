@@ -6,7 +6,6 @@ import android.view.View;
 import com.miracle.qmt.base.BaseListActivity;
 import com.miracle.qmt.base.BasePresenter;
 import com.miracle.qmt.base.BaseViewHolder;
-import com.miracle.qmt.network.ApiFactory;
 import com.miracle.qmt.network.MyResult;
 import com.miracle.qmt.ui.model.MessageItem;
 import com.miracle.qmt.ui.view.viewHolder.MessageVH;
@@ -25,13 +24,19 @@ public class MessageListActivity extends BaseListActivity<BasePresenter, Message
     }
 
     @Override
+    public void initView() {
+        super.initView();
+        mTvTitle.setText("消息");
+    }
+
+    @Override
     public Class<? extends BaseViewHolder<MessageItem>> getViewHolder() {
         return MessageVH.class;
     }
 
     @Override
     public Observable<MyResult<ArrayList<MessageItem>>> getObservble() {
-        return ApiFactory.getXynSingleton().messages("");
+        return null;
     }
 
     @Override
@@ -41,7 +46,7 @@ public class MessageListActivity extends BaseListActivity<BasePresenter, Message
 
     @Override
     public void onNextPageSuccess(ArrayList<MessageItem> response) {
-
+        dealData(response);
     }
 
     @Override

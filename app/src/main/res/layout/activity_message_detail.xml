@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/title_sub"/>
+    <include layout="@layout/title_sub" />
     <View style="@style/line_horizontal_gray4_bold"/>
     <TextView style="@style/textview_14"
         android:id="@+id/tv"/>

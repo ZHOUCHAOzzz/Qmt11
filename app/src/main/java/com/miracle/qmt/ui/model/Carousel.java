@@ -17,6 +17,7 @@ public class Carousel {
     private String pic_name;
     private String pic;
     private String add_time;
+    private String user_id;
 
     public int getCarousel_id() {
         return carousel_id;
@@ -48,5 +49,13 @@ public class Carousel {
 
     public void setAdd_time(String add_time) {
         this.add_time = add_time;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 }

@@ -6,7 +6,7 @@
 
     <LinearLayout style="@style/LHW">
 
-        <com.miracle.wecloud.ui.view.ImageTextView
+        <com.miracle.qmt.ui.view.ImageTextView
             android:id="@+id/iv"
             android:layout_width="45dp"
             android:layout_height="45dp" />

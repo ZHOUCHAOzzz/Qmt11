@@ -8,16 +8,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.miracle.qmt.R;
 import com.miracle.qmt.base.BaseActivity;
 import com.miracle.qmt.ui.contract.ReportContract;
+import com.miracle.qmt.ui.model.ResultBean;
 import com.miracle.qmt.ui.presenter.ReportPresenter;
-import com.miracle.qmt.util.PreferencesUtils;
-import com.miracle.qmt.util.T;
-import com.miracle.qmt.util.UserManager;
 
 import butterknife.Bind;
+import me.leefeng.promptlibrary.PromptDialog;
 
 /**
  * 留言举报
@@ -30,6 +30,7 @@ public class ReportActivity extends BaseActivity<ReportPresenter> implements Rep
     EditText etName;
     @Bind(R.id.iv_delete)
     ImageView ivDelete;
+    private PromptDialog promptDialog;
 
     @Override
     public int getLayoutId() {
@@ -44,6 +45,8 @@ public class ReportActivity extends BaseActivity<ReportPresenter> implements Rep
     @Override
     public void initView() {
         super.initView();
+        //创建对象
+        promptDialog = new PromptDialog(this);
         mTvTitle.setText("留言举报");
         tvTitleRight.setText("保存");
         tvTitleRight.setClickable(true);
@@ -51,9 +54,12 @@ public class ReportActivity extends BaseActivity<ReportPresenter> implements Rep
         tvTitleRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManager.User user = new UserManager().new User();
-                user.setManagement(etName.getText().toString().trim());
-                showProgressDialog("加载中");
+                if (TextUtils.isEmpty(etName.getText().toString())) {
+                    promptDialog.showWarn("留言成功");
+                    return;
+                }
+                mPresenter.getData(etName.getText().toString().trim());
+              //  showProgressDialog("加载中");
 //                mPresenter.updateInfo(user);
             }
         });
@@ -79,6 +85,23 @@ public class ReportActivity extends BaseActivity<ReportPresenter> implements Rep
 
     @Override
     public void afterTextChanged(Editable s) {
+
+    }
+
+    @Override
+    public void getData(ResultBean s) {
+        switch (s.getResult()){
+            case 0:
+                Toast.makeText(ReportActivity.this,"举报成功",Toast.LENGTH_SHORT).show();
+            //    promptDialog.showSuccess("留言成功");
+                finish();
+                break;
+            default:
+                Toast.makeText(ReportActivity.this,"举报失败",Toast.LENGTH_SHORT).show();
+
+                break;
+
+        }
 
     }
 

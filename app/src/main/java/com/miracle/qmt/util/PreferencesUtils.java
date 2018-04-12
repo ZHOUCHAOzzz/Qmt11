@@ -25,6 +25,9 @@ public class PreferencesUtils {
     public static final String TICKET = "ticket";
     public static final String JPUSH_SET_SUCC = "JPUSH_SET_SUCC";
 
+    public static final String LATITUDE = "LATITUDE";
+    public static final String LONTITUDE = "LONTITUDE";
+
     //适配因子，在首次启动的activity里面初始化
     public static final String ZOOM_RATIO = "zoom_ratio";
 

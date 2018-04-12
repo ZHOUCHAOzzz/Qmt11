@@ -15,6 +15,7 @@ import com.miracle.qmt.ui.view.ImageTextView;
 public class ContractsVH extends BaseViewHolder<ContractItem> {
     TextView mTv;
     ImageTextView mIv;
+
     public ContractsVH(View itemView) {
         super(itemView);
         mTv = (TextView) itemView.findViewById(R.id.tv);
@@ -28,6 +29,7 @@ public class ContractsVH extends BaseViewHolder<ContractItem> {
 
     @Override
     public void onBindViewHolder(View view, int position, ContractItem item) {
-
+        mTv.setText(item.getNick_name());
+        mIv.setIconText(mContext, item.getNick_name());
     }
 }

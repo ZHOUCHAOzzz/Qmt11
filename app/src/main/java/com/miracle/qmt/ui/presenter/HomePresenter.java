@@ -52,7 +52,7 @@ public class HomePresenter extends HomeContract.Presenter {
                     @Override
                     public void onFail(String info) {
                         super.onFail(info);
-                        mView.showMsg(info);
+                       // mView.showMsg(info);
                     }
                 });
         addSubscription(mSubscription);

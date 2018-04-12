@@ -1,5 +1,6 @@
 package com.miracle.qmt.ui.activity;
 
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -14,7 +15,6 @@ import com.miracle.qmt.ui.contract.UpdateInfoContract;
 import com.miracle.qmt.ui.presenter.UpdateInfoPresenter;
 import com.miracle.qmt.util.PreferencesUtils;
 import com.miracle.qmt.util.T;
-import com.miracle.qmt.util.UserManager;
 
 import butterknife.Bind;
 
@@ -50,9 +50,15 @@ public class UpdateTelActivity extends BaseActivity<UpdateInfoPresenter> impleme
         tvTitleRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManager.User user = new UserManager().new User();
-                user.setPhone(etName.getText().toString().trim());
-                mPresenter.updateInfo(user);
+                PreferencesUtils.setPreferences(UpdateTelActivity.this,PreferencesUtils.USER_TEL,etName.getText().toString().trim());
+                /*UserManager.User user = new UserManager(). new User();
+                user.setPhone(etName.getText().toString().trim());*/
+                Intent mIntent = new Intent();
+                mIntent.putExtra("tel", etName.getText().toString().trim());
+                // 设置结果，并进行传送
+                setResult(102, mIntent);
+                finish();
+               // mPresenter.updateInfo(user);
             }
         });
     }

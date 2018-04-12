@@ -1,6 +1,7 @@
 package com.miracle.qmt.ui.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 
 import com.miracle.qmt.R;
@@ -63,8 +64,9 @@ public class CommNewsListActivity extends BaseListActivity<BasePresenter, NewsIt
     @Override
     public void onItemClickEvent(View view, NewsItem item, int position) {
         super.onItemClickEvent(view, item, position);
+        Log.d("999999",item.getDetail_id()+"");
         Intent intent = new Intent(mContext, NewsDetailActivity.class);
-        intent.putExtra(ConstantKey.STRING_ITEM, item.getDetail_id());
+        intent.putExtra(ConstantKey.STRING_ITEM, item.getDetail_id()+"");
         showActivity(intent);
     }
 }

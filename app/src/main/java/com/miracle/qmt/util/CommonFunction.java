@@ -23,6 +23,6 @@ public class CommonFunction {
      * @param context
      */
     public static void showImage(Context context, String url, ImageView imageView,int errorImg){
-        Glide.with(context).load(url).thumbnail(0.4f).error(errorImg).into((imageView));
+        //Glide.with(context).load(url).thumbnail(0.4f).error(errorImg).into((imageView));
     }
 }

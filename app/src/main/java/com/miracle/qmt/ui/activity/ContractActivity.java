@@ -1,3 +1,4 @@
+/*
 package com.miracle.qmt.ui.activity;
 
 import android.annotation.SuppressLint;
@@ -16,10 +17,12 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import rx.Observable;
 
+*/
 /**
  * Created by Administrator on 2017/7/22.
  * 本地通讯录
- */
+ *//*
+
 public class ContractActivity extends BaseListActivity<ContractPresenter,SortModel,ArrayList<SortModel>> implements ConContract.View {
     @Override
     public int getLayoutId() {
@@ -93,3 +96,4 @@ public class ContractActivity extends BaseListActivity<ContractPresenter,SortMod
         dealData(mList);
     }
 }
+*/

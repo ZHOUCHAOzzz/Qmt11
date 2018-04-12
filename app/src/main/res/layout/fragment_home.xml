@@ -56,7 +56,7 @@
                 android:layout_weight="1"
                 android:drawableTop="@drawable/icon_metting"
                 android:gravity="center"
-                android:text="展会会议" />
+                android:text="展会行情" />
             <View style="@style/line_vertrial"/>
             <TextView
                 android:id="@+id/tv_3"

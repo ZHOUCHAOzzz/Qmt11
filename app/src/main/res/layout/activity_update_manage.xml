@@ -14,7 +14,10 @@
             android:layout_weight="1"
             android:gravity="top"
             android:hint="请填写您的经营内容..."
-            android:minHeight="150dp"/>
+            android:inputType="textMultiLine"
+            android:maxEms="2000"
+            android:minHeight="150dp"
+            />
         <ImageView
             android:visibility="gone"
             android:id="@+id/iv_delete"
@@ -24,4 +27,18 @@
             android:src="@drawable/icon_delete"/>
     </LinearLayout>
 <View style="@style/line_horizontal_gray4"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            style="@style/textview_14"
+            android:textSize="13sp"
+            android:text="0/2000"/>
+
+    </RelativeLayout>
 </LinearLayout>

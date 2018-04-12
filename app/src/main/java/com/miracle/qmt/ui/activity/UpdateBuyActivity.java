@@ -1,5 +1,6 @@
 package com.miracle.qmt.ui.activity;
 
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -14,7 +15,6 @@ import com.miracle.qmt.ui.contract.UpdateInfoContract;
 import com.miracle.qmt.ui.presenter.UpdateInfoPresenter;
 import com.miracle.qmt.util.PreferencesUtils;
 import com.miracle.qmt.util.T;
-import com.miracle.qmt.util.UserManager;
 
 import butterknife.Bind;
 
@@ -29,6 +29,9 @@ public class UpdateBuyActivity extends BaseActivity<UpdateInfoPresenter> impleme
     EditText etName;
     @Bind(R.id.iv_delete)
     ImageView ivDelete;
+    @Bind(R.id.tv_length)
+    TextView tvLength;
+    final int maxlength=2000;
 
     @Override
     public int getLayoutId() {
@@ -47,13 +50,22 @@ public class UpdateBuyActivity extends BaseActivity<UpdateInfoPresenter> impleme
         tvTitleRight.setText("保存");
         tvTitleRight.setClickable(true);
         etName.addTextChangedListener(this);
+        Intent intent=getIntent();
+
+        if (intent.getStringExtra("buy")!=null){
+            String buy=intent.getStringExtra("buy");
+            etName.setText(buy);
+        }
+
         tvTitleRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserManager.User user = new UserManager().new User();
-                user.setBuy(etName.getText().toString().trim());
-                showProgressDialog("加载中");
-                mPresenter.updateInfo(user);
+                /*UserManager.User user = new UserManager().new User();
+                user.setBuy(etName.getText().toString().trim());*/
+                PreferencesUtils.setPreferences(UpdateBuyActivity.this,PreferencesUtils.USER_BUY,etName.getText().toString().trim());
+                finish();
+               // showProgressDialog("加载中");
+               // mPresenter.updateInfo(user);
             }
         });
     }
@@ -78,6 +90,7 @@ public class UpdateBuyActivity extends BaseActivity<UpdateInfoPresenter> impleme
 
     @Override
     public void afterTextChanged(Editable s) {
+        tvLength.setText(maxlength-s.length()+"/"+"2000");
 
     }
 
