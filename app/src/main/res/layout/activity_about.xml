@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_sub_right_text"/>
+    <View style="@style/line_horizontal_gray4_bold"
+        android:background="@color/bg_color"/>
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_logo"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="全苗通1.0"
+        style="@style/textview_14"/>
+
+</LinearLayout>

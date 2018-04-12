@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_sub_right_text"/>
+    <View style="@style/line_horizontal_gray4_bold"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView style="@style/textview_14"
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:textSize="17sp"
+                android:textColor="#252525"
+                android:text="全国苗木行业通讯录
+我在这个行业里混了十年了，深知这个行业里的人有多么的不容易，生产自不必说了，风吹日晒雨淋成了家常便饭。但是要是苗子能卖出去，我们也乐呀，然而现在苗子不太好卖了。
+过去呢，我们卖苗子都是参加展会，在报纸杂志上做广告，也有在网站上做广告的，先不说哪家效果好与赖，但就是宣传成本不低呀！虽然广告不是万能的，但是没有广告是万万不能的呀！那么有没有一种广告效果还好，同时成本还低廉的方法呢？回答：有。由吉林德隆文化传媒有限公司开发的全国苗木通讯录（简称全苗通）就解决了这个问题。第一它费用低，全年才300元。第二宣传的内容丰富，能容纳九张图片，比彩页传单还好，对了你印一千张彩页传单多少钱？有多少人看？有多少人保留？我就不信谁能把手机无缘无故的摔了？摔完再买，你的信息还在。而且这里你能看见成千上万的人，成千上万的人也能看见你。而且你的信息可以随时随地的更新，传单杂志报纸能随意更新吗？而且最重要的一件事是：我们引入了三级分销系统，我们把他变成了全民营销。也就是说，如果你愿意，你可以让三十人来安装使用全苗通（当然指付费的，以后所提全苗通全按照付费模式举例），而恰恰这三十人能够让你买房买车了。下面请看题：
+假如你让三十人A安装了全苗通，那么同理，这30人每个A又让30人B安装使用了全苗通，而这每个B又让30人C安装使用了全苗通，往后先不说了，因为往后跟你没有关系了。那么我们就这ABC来给你讲讲你的收入。因为你每安排一个人付费使用的话我们都有10%的提成的。
+A: 30人×300×10%＝900元（每个人300元）
+
+B: 30人×30人×300×10%＝27000元
+
+C: 30人×30人×30人×300×10%＝810000元
+  以上是你让30个人付费安装了全苗通所获得的提成。
+那么通过你的努力，我们公司赚钱了，
+  A: 30×（300-300×10%）＝8100元
+  B: 30×30×（300-300×10%-300×10%）＝216000元
+  C: 30×30×30×（300-300×10%-300×10%-300×10%）＝5670000元
+总共收入5894100元。
+也就是说，全苗通通过你的努力，公司收入了5894100元，那么如果上述数字你还不满意的话，还想多赚钱的话，那么现在加入我们，你拿2万元入股，那么公司将把通过你的努力赚的钱拿出一半（50%）给你进行分润，这部分是2947050元，再加上你赚的提成钱837900元，你将获得总数为3784950元的收入。而获得这些收入的前提是你只需付出二万元的合作费用和工作时间就可获得。而且收入计算全是系统自动化计算，不用人为干预。三百多万不够买房子买车的吗？关键是看你能不能发展苗木行业里的30多人了。安装全苗通，都愿意，入不入股，大伙随意，只要别说我吃独食就行了。
+有感兴趣的朋友抓紧联系我们，机不可失，失不再来！
+吉林德隆文化传媒有限公司
+良言梁语  18088662688   13501138652
+微信公众号：德隆文化传媒
+
+全国苗木行业通讯录
+我在这个行业里混了十年了，深知这个行业里的人有多么的不容易，生产自不必说了，风吹日晒雨淋成了家常便饭。但是要是苗子能卖出去，我们也乐呀，然而现在苗子不太好卖了。
+过去呢，我们卖苗子都是参加展会，在报纸杂志上做广告，也有在网站上做广告的，先不说哪家效果好与赖，但就是宣传成本不低呀！虽然广告不是万能的，但是没有广告是万万不能的呀！那么有没有一种广告效果还好，同时成本还低廉的方法呢？回答：有。由吉林德隆文化传媒有限公司开发的全国苗木通讯录（简称全苗通）就解决了这个问题。第一它费用低，全年才300元。第二宣传的内容丰富，能容纳九张图片，比彩页传单还好，对了你印一千张彩页传单多少钱？有多少人看？有多少人保留？我就不信谁能把手机无缘无故的摔了？摔完再买，你的信息还在。而且这里你能看见成千上万的人，成千上万的人也能看见你。而且你的信息可以随时随地的更新，传单杂志报纸能随意更新吗？而且最重要的一件事是：我们引入了三级分销系统，我们把他变成了全民营销。也就是说，如果你愿意，你可以让三十人来安装使用全苗通（当然指付费的，以后所提全苗通全按照付费模式举例），而恰恰这三十人能够让你买房买车了。下面请看题：
+假如你让三十人A安装了全苗通，那么同理，这30人每个A又让30人B安装使用了全苗通，而这每个B又让30人C安装使用了全苗通，往后先不说了，因为往后跟你没有关系了。那么我们就这ABC来给你讲讲你的收入。因为你每安排一个人付费使用的话我们都有10%的提成的。
+A: 30人×300×10%＝900元（每个人300元）
+
+B: 30人×30人×300×10%＝27000元
+
+C: 30人×30人×30人×300×10%＝810000元
+  以上是你让30个人付费安装了全苗通所获得的提成。
+那么通过你的努力，我们公司赚钱了，
+  A: 30×（300-300×10%）＝8100元
+  B: 30×30×（300-300×10%-300×10%）＝216000元
+  C: 30×30×30×（300-300×10%-300×10%-300×10%）＝5670000元
+总共收入5894100元。
+也就是说，全苗通通过你的努力，公司收入了5894100元，那么如果上述数字你还不满意的话，还想多赚钱的话，那么现在加入我们，你拿2万元入股，那么公司将把通过你的努力赚的钱拿出一半（50%）给你进行分润，这部分是2947050元，再加上你赚的提成钱837900元，你将获得总数为3784950元的收入。而获得这些收入的前提是你只需付出二万元的合作费用和工作时间就可获得。而且收入计算全是系统自动化计算，不用人为干预。三百多万不够买房子买车的吗？关键是看你能不能发展苗木行业里的30多人了。安装全苗通，都愿意，入不入股，大伙随意，只要别说我吃独食就行了。
+有感兴趣的朋友抓紧联系我们，机不可失，失不再来！"/>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:textSize="15sp"
+                    android:text="吉林德隆文化传媒有限公司"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:textSize="15sp"
+                    android:text="良言梁语  18088662688   13501138652"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:textSize="15sp"
+                    android:text="微信公众号：德隆文化传媒"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

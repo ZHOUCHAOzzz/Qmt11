@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+    <include layout="@layout/title_sub_right_text"/>
+    <View style="@style/line_horizontal_gray4_bold"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_head"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/icon_headpic" />
+                    <TextView
+                        android:id="@+id/tv_nikename"
+                        style="@style/textview_14"
+                        android:layout_marginTop="3dp"
+                        android:text="姓名"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/namephone"
+                            style="@style/textview_14"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentBottom="true"
+                            android:textColor="#252525"
+                            android:layout_marginLeft="10dp"
+                            android:text="电话号码:"/>
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_toRightOf="@+id/namephone"
+                            style="@style/textview_14"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentBottom="true"
+                            android:textColor="@color/text_green"
+                            android:layout_marginLeft="10dp"
+                            />
+
+
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_height="0dp">
+                        <TextView
+
+                            style="@style/textview_14"
+
+                            android:textColor="#252525"
+                            android:layout_marginLeft="10dp"
+                            android:text="公司:"/>
+                        <TextView
+                            android:id="@+id/tv_company"
+                            style="@style/textview_14"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            android:text="加载中..."
+                            />
+
+
+
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="0dp">
+                        <TextView
+                            android:id="@+id/nameaddress"
+                            style="@style/textview_14"
+                            android:textColor="#252525"
+                            android:layout_marginLeft="10dp"
+                            android:layout_alignParentTop="true"
+                            android:text="地址:"/>
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_toRightOf="@+id/nameaddress"
+                            style="@style/textview_14"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="加载中.."
+                            />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <View
+
+                android:layout_height="5dp"
+                style="@style/line_horizontal_gray4_bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="150dp">
+                <TextView
+                    android:id="@+id/manage"
+                    style="@style/textview_14"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="经营内容"/>
+                <TextView
+                    android:id="@+id/tv_manage"
+                    style="@style/textview_14"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:maxLength="2000"
+                    android:ellipsize="end"
+                    android:text="加载中.."
+                    />
+
+
+
+
+            </LinearLayout>
+            <View
+
+                android:layout_height="5dp"
+                style="@style/line_horizontal_gray4_bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="150dp">
+                <TextView
+                    android:id="@+id/nambuy"
+                    style="@style/textview_14"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#252525"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="求购"/>
+                <TextView
+                    android:id="@+id/tv_buy"
+                    style="@style/textview_14"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:maxLength="300"
+                    android:ellipsize="end"
+                    android:text="加载中.."
+                    />
+
+
+
+            </LinearLayout>
+            <View
+                android:layout_height="5dp"
+                style="@style/line_horizontal_gray4_bold"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_pics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:id="@+id/shoucang"
+                android:layout_below="@+id/rl"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_radius_red"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_collect" />
+
+                <TextView
+                    android:id="@+id/tv_collect"
+                    style="@style/textview_14"
+                    android:layout_marginLeft="@dimen/horizontal_small"
+                    android:text="点击收藏"
+                    android:textColor="@color/text_red_1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
